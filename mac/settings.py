@@ -70,7 +70,17 @@ WSGI_APPLICATION = 'mac.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER':'postgres',
+        'PASSWORD':'postgresql',
+        'HOST':'localhost',
+        'PORT':'5432'
+    }
+}
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -81,7 +91,7 @@ import dj_database_url
 
 db_from_env=dj_database_url.config()
 DATABASES['default'].update(db_from_env)
-
+'''
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
